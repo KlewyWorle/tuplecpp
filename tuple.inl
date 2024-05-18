@@ -44,8 +44,7 @@ namespace klewy
     template<std::size_t index>
     void Tuple<Head, Args...>::changeAt(auto val)
     {
-        auto &ref = get<index>();
-        ref = val;
+        get<index>() = val;
     }
 
 
