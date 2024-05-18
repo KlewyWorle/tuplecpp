@@ -1,4 +1,5 @@
 #pragma once
+#include <cstddef>
 #include<iostream>
 
 
@@ -15,12 +16,18 @@ public:
     Tuple(Head h, Args... a);
 
     template<std::size_t index>
-    auto get();
+    auto& get();
 
+    template<std::size_t index>
+    void changeAt(auto val);
     
+private:
     Head head;
     Tuple<Args...> rest;
 
+protected:
+    // template<size_t index>
+    // auto& getR();
 
 };
 template<>

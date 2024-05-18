@@ -12,8 +12,11 @@ int main()
 {
 
     klewy::Tuple<std::string, const char*, int> f("arr", "tuple", 199);
-    std::cout << f.get<2>() << std::endl;
-    f.heh();
+    
+    f.changeAt<1>("goida");
+
+    std::cout << f.get<1>() << std::endl;
+    
 
     return 0;
 }

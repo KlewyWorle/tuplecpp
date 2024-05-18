@@ -13,7 +13,7 @@ namespace klewy
     }
     template<typename Head, typename ...Args>
     template<std::size_t index>
-    auto Tuple<Head, Args...>::get()
+    auto& Tuple<Head, Args...>::get()
     {
         if constexpr (index == 0)
         {
@@ -23,6 +23,29 @@ namespace klewy
         {
             return rest.template get<index - 1>();
         }
+    }
+
+    // template<typename Head, typename ...Args>
+    // template<size_t index>
+    // auto& Tuple<Head, Args...>::getR()
+    // {
+    //     if constexpr (index == 0)
+    //     {
+    //         return head;
+    //     }
+    //     else
+    //     {
+    //         return rest.template getR<index - 1>();
+    //     }
+        
+    // }
+
+    template<typename Head, typename ...Args>
+    template<std::size_t index>
+    void Tuple<Head, Args...>::changeAt(auto val)
+    {
+        auto &ref = get<index>();
+        ref = val;
     }
 
 
