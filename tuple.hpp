@@ -17,7 +17,7 @@ public:
     template<std::size_t index>
     auto get();
 
-    void heh();
+    
     Head head;
     Tuple<Args...> rest;
 

@@ -26,11 +26,7 @@ namespace klewy
     }
 
 
-    template<typename Head, typename ...Args>
-    void Tuple<Head, Args...>::heh()
-    {
-        printf("heh\n");
-    }
+    
 
 
 
